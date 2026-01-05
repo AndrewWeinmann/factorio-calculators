@@ -1,0 +1,12 @@
+{
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "quoteProps": "preserve",
+  "singleQuote": false,
+  "tabWidth": 2,
+  "tailwindStylesheet": "./src/index.css",
+  "trailingComma": "all"
+}
