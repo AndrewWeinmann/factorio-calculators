@@ -1,0 +1,27 @@
+{
+  "cSpell.words": [
+    "Avenir",
+    "claude",
+    "davidanson",
+    "dbaeumer",
+    "devcontainers",
+    "esbenp",
+    "factorio",
+    "kohler",
+    "redhat",
+    "richie",
+    "Stylesheet",
+    "tailwindcss"
+  ],
+  "css.lint.importStatement": "ignore",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "files.associations": {
+    "LICENSE": "plaintext"
+  },
+  "git.inputValidation": true,
+  "git.inputValidationLength": 72,
+  "git.inputValidationSubjectLength": 60,
+  "npm.packageManager": "npm"
+}
