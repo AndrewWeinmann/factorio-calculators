@@ -4,12 +4,33 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>factorio-calculators</title>
+    <title>Factorio Calculators</title>
+    <script>
+      // Prevent FOUC by applying theme before React loads.
+      // NOTE: This logic is intentionally duplicated in ThemeProvider.tsx.
+      // Keep both in sync when modifying theme detection logic.
+      (function () {
+        try {
+          const storedTheme = localStorage.getItem("theme");
+          const isValidStoredTheme = storedTheme === "light" || storedTheme === "dark";
+          const theme = isValidStoredTheme
+            ? storedTheme
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (_e) {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          }
+        }
+      })();
+    </script>
   </head>
-  <body
-    class="light:bg-white light:text-[#213547] m-0 flex min-h-screen min-w-80 items-center bg-[#242424] text-white/87"
-  >
-    <div id="root" class="w-full"></div>
+  <body class="m-0">
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
