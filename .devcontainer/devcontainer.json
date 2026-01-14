@@ -2,21 +2,25 @@
   "name": "Factorio Calculators Dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:dev-24-bookworm",
   "features": {
+    "ghcr.io/devcontainers/features/copilot-cli:1": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers-extra/features/claude-code:1": {}
   },
   "mounts": [
-    "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,consistency=cached,readonly",
-    "source=${localEnv:HOME}/.gitconfig.local,target=/home/node/.gitconfig.local,type=bind,consistency=cached,readonly",
-    "source=${localEnv:HOME}/.gitignore,target=/home/node/.gitignore,type=bind,consistency=cached,readonly",
-    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,readonly"
+    "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,readonly",
+    "source=${localEnv:HOME}/.gitconfig.local,target=/home/node/.gitconfig.local,type=bind,readonly",
+    "source=${localEnv:HOME}/.gitignore,target=/home/node/.gitignore,type=bind,readonly",
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,readonly",
+    "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.claude.json,target=/home/node/.claude.json,type=bind,consistency=cached"
   ],
   "remoteUser": "node",
   "customizations": {
     "vscode": {
       "extensions": [
         "anthropic.claude-code",
+        "bradlc.vscode-tailwindcss",
         "christian-kohler.npm-intellisense",
         "christian-kohler.path-intellisense",
         "davidanson.vscode-markdownlint",
@@ -25,9 +29,11 @@
         "github.copilot-chat",
         "github.vscode-github-actions",
         "github.vscode-pull-request-github",
+        "ms-playwright.playwright",
         "redhat.vscode-yaml",
         "richie5um2.vscode-sort-json",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "vitest.explorer"
       ]
     }
   },
