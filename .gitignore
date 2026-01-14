@@ -30,3 +30,9 @@ dist-ssr
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Vitest
+coverage/
+
+# AI Coding Tools
+.claude/*.local.*
