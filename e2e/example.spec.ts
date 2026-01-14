@@ -4,7 +4,7 @@ test("has title", async ({ page }) => {
   await page.goto("http://localhost:5173/");
 
   // Expect the app to have loaded with correct title
-  await expect(page).toHaveTitle(/factorio-calculators/);
+  await expect(page).toHaveTitle(/Factorio Calculators/);
 });
 
 test("app renders", async ({ page }) => {
